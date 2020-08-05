@@ -1,8 +1,8 @@
 import React from 'react';
-import Menu from './components/Menu';
-import BannerMain from './components/BannerMain';
-import Carousel from './components/Carousel';
-import dadosIniciais from './data/dados_iniciais.json';
+import Menu from '../../components/Menu';
+import BannerMain from '../../components/BannerMain';
+import Carousel from '../../components/Carousel';
+import dadosIniciais from '../../data/dados_iniciais.json';
 
 function renderCategoria(categoria) {
     return <Carousel
@@ -10,7 +10,7 @@ function renderCategoria(categoria) {
         />
 }
 
-function App() {
+function Home() {
   return (
     <div style={{ background: "#141414"}}>
 
@@ -33,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
