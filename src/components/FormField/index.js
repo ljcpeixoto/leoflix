@@ -7,7 +7,7 @@ function FormField({label, type, name, value, onChange}) {
         <label htmlFor={fieldId}>
             {label}:
             <input
-                id={}
+                id={fieldId}
                 type={type}
                 name={name}
                 value={value}
