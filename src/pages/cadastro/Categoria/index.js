@@ -5,88 +5,87 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
-    const valorInicial = {
-        nome: '',
-        descricao: '',
-        cor: '#000000'
-    }
+  const valorInicial = {
+    nome: '',
+    descricao: '',
+    cor: '#000000',
+  };
 
-    const [categorias, setCategorias] = useState([]);
-    const [novaCategoria, setNovaCategoria] = useState(valorInicial);
+  const [categorias, setCategorias] = useState([]);
+  const [novaCategoria, setNovaCategoria] = useState(valorInicial);
 
-    function setValor(chave, valor) {
-        setNovaCategoria({
-            ...novaCategoria,
-            [chave]: valor
-        })
-    }
+  function setValor(chave, valor) {
+    setNovaCategoria({
+      ...novaCategoria,
+      [chave]: valor,
+    });
+  }
 
-    function onChangeValor(info) {
-        setValor(
-            info.target.getAttribute('name'),
-            info.target.value);
-    }
+  function onChangeValor(info) {
+    setValor(
+      info.target.getAttribute('name'),
+      info.target.value,
+    );
+  }
 
-    function handleSubmit(infoDoForm) {
-        infoDoForm.preventDefault();
-        console.log('Tentou enviar form: ', infoDoForm);
-        setCategorias([...categorias, novaCategoria]);
-        setNovaCategoria(valorInicial);
-    }
+  function handleSubmit(infoDoForm) {
+    infoDoForm.preventDefault();
+    console.log('Tentou enviar form: ', infoDoForm);
+    setCategorias([...categorias, novaCategoria]);
+    setNovaCategoria(valorInicial);
+  }
 
-    return (
-        <PageDefault>
-            <h1>Página de Cadastro de Categoria</h1>
+  return (
+    <PageDefault>
+      <h1>Página de Cadastro de Categoria</h1>
 
-            <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
 
-                <div>
-                    <FormField
-                        label = "Nome da categoria"
-                        type="text"
-                        name="nome"
-                        value = {novaCategoria.nome}
-                        onChange = {onChangeValor}
-                    />
+        <div>
+          <FormField
+            label="Nome da categoria"
+            type="text"
+            name="nome"
+            value={novaCategoria.nome}
+            onChange={onChangeValor}
+          />
 
-                    <FormField
-                        label = "Descrição"
-                        type="text"
-                        name="descricao"
-                        value = {novaCategoria.descricao}
-                        onChange = {onChangeValor}
-                    />
+          <FormField
+            label="Descrição"
+            type="text"
+            name="descricao"
+            value={novaCategoria.descricao}
+            onChange={onChangeValor}
+          />
 
-                    <FormField
-                        label = "Cor"
-                        type="color"
-                        name="cor"
-                        value = {novaCategoria.cor}
-                        onChange = {onChangeValor}
-                    />
+          <FormField
+            label="Cor"
+            type="color"
+            name="cor"
+            value={novaCategoria.cor}
+            onChange={onChangeValor}
+          />
 
-                </div>
+        </div>
 
-                <button>
-                    Cadastrar
-                </button>
-            </form>
+        <button>
+          Cadastrar
+        </button>
+      </form>
 
-            <ul>
-                {categorias.map((categoria, indice) => {
-                        return <li key={categoria + indice}>
-                            {categoria.nome}
-                        </li>
-                    })
-                }
-            </ul>
+      <ul>
+        {categorias.map((categoria, indice) => (
+          <li key={categoria + indice}>
+            {categoria.nome}
+          </li>
+        ))}
+      </ul>
 
-
-            <Link to="/">
-                Ir para Home
-            </Link>
-        </PageDefault>
-    )
+      <Link to="/">
+        Ir para Home
+      </Link>
+    </PageDefault>
+  );
 }
 
 export default CadastroCategoria;
