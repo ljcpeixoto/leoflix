@@ -21,20 +21,24 @@ function CadastroCategoria() {
     }
 
     function onChangeValor(info) {
+        const {getAttribute, value} = info.target;
         setValor(
-            info.target.getAttribute('name'),
-            info.target.value);
+            getAttribute('name'),
+            value);
+    }
+
+    function handleSubmit(infoDoForm) {
+        infoDoForm.preventDefault();
+        console.log('Tentou enviar form: ', infoDoForm);
+        setCategorias([...categorias, novaCategoria]);
+        setNovaCategoria(valorInicial);
     }
 
     return (
         <PageDefault>
             <h1>Página de Cadastro de Categoria</h1>
 
-            <form onSubmit={function handleSubmit(infoDoForm) {
-                infoDoForm.preventDefault();
-                console.log('Tentou enviar form: ', infoDoForm);
-                setCategorias([...categorias, novaCategoria])
-            }}>
+            <form onSubmit={handleSubmit}>
 
                 <div>
                     <label>
