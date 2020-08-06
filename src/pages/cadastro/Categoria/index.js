@@ -54,7 +54,6 @@ function CadastroCategoria() {
                     <label>
                         Descrição:
                         <textarea
-                            type="text"
                             name="descricao"
                             value={novaCategoria.descricao}
                             onChange={onChangeValor}
