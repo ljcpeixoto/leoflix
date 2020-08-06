@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
     const valorInicial = {
@@ -40,34 +41,29 @@ function CadastroCategoria() {
             <form onSubmit={handleSubmit}>
 
                 <div>
-                    <label>
-                        Nome da Categoria:
-                        <input
-                            type="text"
-                            name="nome"
-                            value={novaCategoria.nome}
-                            onChange={onChangeValor}
-                        />
-                    </label>
+                    <FormField
+                        label = "Nome da categoria"
+                        type="text"
+                        name="nome"
+                        value = {novaCategoria.nome}
+                        onChange = {onChangeValor}
+                    />
 
-                    <label>
-                        Descrição:
-                        <textarea
-                            name="descricao"
-                            value={novaCategoria.descricao}
-                            onChange={onChangeValor}
-                        />
-                    </label>
+                    <FormField
+                        label = "Descrição"
+                        type="text"
+                        name="descricao"
+                        value = {novaCategoria.descricao}
+                        onChange = {onChangeValor}
+                    />
 
-                    <label>
-                        Cor:
-                        <input
-                            type="color"
-                            name="cor"
-                            value={novaCategoria.cor}
-                            onChange={onChangeValor}
-                        />
-                    </label>
+                    <FormField
+                        label = "Cor"
+                        type="color"
+                        name="cor"
+                        value = {novaCategoria.cor}
+                        onChange = {onChangeValor}
+                    />
 
                 </div>
 
