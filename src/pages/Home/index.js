@@ -5,7 +5,7 @@ import PageDefault from '../../components/PageDefault';
 import dadosIniciais from '../../data/dados_iniciais.json';
 
 function renderCategoria(categoria) {
-    return <Carousel
+    return <Carousel key={categoria.titulo}
             category={ categoria }
         />
 }
