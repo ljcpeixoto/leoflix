@@ -21,10 +21,9 @@ function CadastroCategoria() {
     }
 
     function onChangeValor(info) {
-        const {getAttribute, value} = info.target;
         setValor(
-            getAttribute('name'),
-            value);
+            info.target.getAttribute('name'),
+            info.target.value);
     }
 
     function handleSubmit(infoDoForm) {
