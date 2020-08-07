@@ -36,11 +36,12 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const URL_TOP = window.location.hostname.includes('localhost')
-      ? 'http://localhost:3001/categorias'
-      : 'http://leoflix-server.herokuapp.com/categorias';
+    const URL_BASE = window.location.hostname.includes('localhost')
+      ? 'http://localhost:3001'
+      : 'http://leoflix-server.herokuapp.com';
+    const URL = `${URL_BASE}/categorias`;
 
-    fetch(URL_TOP).then(async (respostaServidor) => {
+    fetch(URL).then(async (respostaServidor) => {
       const resposta = await respostaServidor.json();
       setCategorias([...resposta]);
     });
