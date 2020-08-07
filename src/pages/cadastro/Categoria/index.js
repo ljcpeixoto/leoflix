@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
   const valorInicial = {
     nome: '',
     descricao: '',
-    cor: '#000000',
+    cor: '',
   };
 
   const [categorias, setCategorias] = useState([]);
@@ -52,8 +53,8 @@ function CadastroCategoria() {
 
           <FormField
             label="Descrição"
-            type="text"
             name="descricao"
+            as="textarea"
             value={novaCategoria.descricao}
             onChange={onChangeValor}
           />
@@ -68,9 +69,9 @@ function CadastroCategoria() {
 
         </div>
 
-        <button>
+        <Button>
           Cadastrar
-        </button>
+        </Button>
       </form>
 
       <ul>
