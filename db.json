@@ -11,6 +11,12 @@
       "nome": "Back End",
       "descricao": "Formação de Back End na Alura",
       "cor": "#00C86F"
+    },
+    {
+      "id": 3,
+      "nome": "Data Science e Inteligência Artificial",
+      "descricao": "Cursos de Data Science na Alura",
+      "cor": "#9cd33b"
     }
   ]
 }
