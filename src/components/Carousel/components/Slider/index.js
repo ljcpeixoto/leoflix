@@ -60,7 +60,7 @@ Slider.defaultProps = {
 };
 
 Slider.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Slider;
