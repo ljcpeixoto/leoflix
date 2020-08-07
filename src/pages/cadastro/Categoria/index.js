@@ -31,14 +31,14 @@ function CadastroCategoria() {
 
   function handleSubmit(infoDoForm) {
     infoDoForm.preventDefault();
-    console.log('Tentou enviar form: ', infoDoForm);
     setCategorias([...categorias, novaCategoria]);
     setNovaCategoria(valorInicial);
   }
 
   useEffect(() => {
-    const URL_TOP = 'http://localhost:3001/categorias';
-    console.log('alo alo');
+    const URL_TOP = window.location.hostname.includes('localhost')
+      ? 'http://localhost:3001/categorias'
+      : 'http://leoflix-server.herokuapp.com/categorias';
 
     fetch(URL_TOP).then(async (respostaServidor) => {
       const resposta = await respostaServidor.json();

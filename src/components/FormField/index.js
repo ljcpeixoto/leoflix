@@ -56,7 +56,7 @@ const Input = styled.input`
       border-bottom-color: var(--primary);
     }
 
-    &:focus:not([type="color"]) + span {
+    &:focus:not([type="color"]) + ${Label.Text} {
       transform: scale(.6) translateY(-10px);
     }
     
